@@ -1,0 +1,50 @@
+@startuml UseCasesSoliCode
+left to right direction
+skinparam actorStyle awesome
+skinparam usecaseBorderColor #3A7CA5
+skinparam usecaseBackgroundColor #D9E8F5
+skinparam actorBorderColor #3A7CA5
+skinparam actorBackgroundColor #EFF7FF
+skinparam packageStyle rectangle
+
+actor "Candidat" as candidat
+actor "Administrateur" as admin
+
+rectangle "Plateforme de Test – SoliCode" {
+  
+  (Consulter la page d'accueil) as UC1
+  (S'inscrire) as UC2
+  (Passer le test QCM) as UC3
+  (Voir le résultat du test) as UC4
+  (Recevoir message d'acceptation ou refus) as UC5
+  (Recevoir date d'entretien en cas d'acceptation) as UC6
+  
+  (Se connecter) as UC7
+  (Gérer les questions QCM) as UC8
+  (Ajouter une question) as UC9
+  (Modifier une question) as UC10
+  (Supprimer une question) as UC11
+  (Voir liste des candidats) as UC12
+  (Consulter résultats des candidats) as UC13
+  (Planifier / Valider entretien) as UC14
+}
+
+' Relations Candidat
+candidat --> UC1
+candidat --> UC2
+candidat --> UC3
+candidat --> UC4
+candidat --> UC5
+candidat --> UC6
+
+' Relations Admin
+admin --> UC7
+admin --> UC12
+admin --> UC13
+admin --> UC14
+admin --> UC8
+UC8 --> UC9
+UC8 --> UC10
+UC8 --> UC11
+
+@enduml
