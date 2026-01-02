@@ -1,2 +1,2 @@
 ## labs:
-**Internationalisation (Lang)** 
+**Spatie** 
